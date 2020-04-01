@@ -15,7 +15,7 @@ namespace Xadrez
             return "B";
         }
 
-        public bool podeMover(Posicao pos)
+        private bool podeMover(Posicao pos)
         {
             Peca p = Tab.Peca(pos);
             return p == null || p.Cor != Cor;
@@ -37,7 +37,7 @@ namespace Xadrez
                 {
                     break;
                 }
-                pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
+                pos.DefinirValores(pos.Linha - 1, pos.Coluna - 1);
             }
 
             //NE
@@ -50,7 +50,7 @@ namespace Xadrez
                 {
                     break;
                 }
-                pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna + 1);
+                pos.DefinirValores(pos.Linha - 1, pos.Coluna + 1);
             }
 
             //SE
@@ -63,7 +63,7 @@ namespace Xadrez
                 {
                     break;
                 }
-                pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna + 1);
+                pos.DefinirValores(pos.Linha + 1, pos.Coluna + 1);
             }
 
             //SO
@@ -76,7 +76,7 @@ namespace Xadrez
                 {
                     break;
                 }
-                pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna - 1);
+                pos.DefinirValores(pos.Linha + 1, pos.Coluna - 1);
             }
 
             return mat;
